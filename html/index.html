@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- header -->
-    <header id="header">
+    <header>
       <a href="#">
         <img
           src="/images/panda-market-logo.png"
@@ -26,21 +26,23 @@
       <a href="/html/login.html" class="loginBtn">로그인</a>
     </header>
 
-    <main id="main">
+    <main>
       <!-- top banner -->
       <section class="contents">
         <div class="content">
-          <h2>
-            일상의 모든 물건을 <br />
-            거래해보세요
-          </h2>
-          <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+          <div class="content-text">
+            <h2>
+              일상의 모든 물건을 <br />
+              거래해보세요
+            </h2>
+            <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+          </div>
+          <img
+            src="/images/section_panda.png"
+            alt="일상의 모든 물건을 거래해보세요"
+            class="contentImg"
+          />
         </div>
-        <img
-          src="/images/section_panda.png"
-          alt="배너 사진"
-          class="contentImg"
-        />
       </section>
 
       <!-- main contents -->
@@ -107,14 +109,14 @@
         </div>
         <img
           src="/images/footer_content_panda.png"
-          alt="하단배너 사진"
+          alt="믿을 수 있는 판다마켓 중고거래"
           class="contentImg"
         />
       </section>
     </main>
 
     <!-- footer -->
-    <footer id="footer">
+    <footer>
       <div class="footerContents">
         <span>©codeit - 2024</span>
         <div class="footerPolicy">
@@ -122,20 +124,29 @@
           <a href="/html/faq.html">FAQ</a>
         </div>
 
-        <div class="footerSns">
-          <a href="https://www.facebook.com/" target="_blank">
-            <img src="/images/svg/facebook-logo.svg" alt="페이스북" />
-          </a>
-          <a href="https://x.com/?lang=ko" target="_blank">
-            <img src="/images/svg/twitter-logo.svg" alt="x" />
-          </a>
-          <a href="https://www.youtube.com/" target="_blank">
-            <img src="/images/svg/youtube-logo.svg" alt="유튜브" />
-          </a>
-          <a href="https://www.instagram.com/" target="_blank">
-            <img src="/images/svg/instagram-logo.svg" alt="인스타그램" />
-          </a>
-        </div>
+        <!-- 관련된 요소들끼리 묶은 ul 태그로 수정 -->
+        <ul class="footerSns">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src="/images/svg/facebook-logo.svg" alt="페이스북" />
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/?lang=ko" target="_blank">
+              <img src="/images/svg/twitter-logo.svg" alt="x" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank">
+              <img src="/images/svg/youtube-logo.svg" alt="유튜브" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="/images/svg/instagram-logo.svg" alt="인스타그램" />
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   </body>
