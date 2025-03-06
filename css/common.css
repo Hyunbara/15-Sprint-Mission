@@ -1,0 +1,12 @@
+/* 각 화면의 공통 요소  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: Pretendard, sans-serif;
+  font-size: 10px;
+}
