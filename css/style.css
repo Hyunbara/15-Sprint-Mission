@@ -1,5 +1,5 @@
 /* 전체 적용 (margin,padding) */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 html {
   font-size: 16px;
-}
+} */
 
 /* header fixed로 인한 contents 영역 침범으로 인한 padding-top */
 body {
@@ -43,15 +43,16 @@ header {
   background-color: #3692ff;
   color: white;
   border-radius: 8px;
-  padding: 0.75rem 1.4rem;
+  padding: 12px 22.4px;
   text-align: center;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.6rem;
   line-height: 1.625rem;
-  width: 8rem;
-  height: 3rem;
+  width: 128px;
+  height: 48px;
   white-space: nowrap;
+  align-content: center;
 }
 
 /* 상단 배너 */
@@ -60,7 +61,7 @@ header {
   background-color: #cfe5ff;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 32px;
   width: 100%;
   z-index: 11;
 }
@@ -71,7 +72,7 @@ header {
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  gap: 2rem;
+  gap: 32px;
   align-items: center;
   max-width: fit-content;
 }
@@ -85,29 +86,25 @@ header {
 /* 상단/하단 배너 요소의 박스 안 h태그 스타일 적용 */
 .content h2 {
   font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 3.5rem;
+  font-size: 4rem;
+  line-height: 56px;
 }
 
 /* 배너 요소 안 '구경하러 가기' 버튼 스타일 적용 */
 .contentBtn {
   display: inline-block;
-  padding: 1rem 10%;
+  padding: 16px 10%;
   background-color: #3692ff;
   border-radius: 40px;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.25rem;
-  /* text-align: center; */
-  /* flex-wrap: nowrap; */
+  font-size: 2rem;
 }
 
 /* 배너(contents) 안의 이미지 요소 크기 적용 */
 .contentImg {
-  /* flex-shrink: 0; */
   width: 40vw;
-  /* max-width: 50%; */
   height: auto;
   object-fit: contain;
   align-items: end;
@@ -172,7 +169,7 @@ header {
 footer {
   background-color: #111827;
   display: flex;
-  padding: 2rem 5%;
+  padding: 32px 5%;
 }
 
 /* footer안의 내부 요소를 감싼 div 스타일 적용 */
@@ -186,7 +183,7 @@ footer {
 /* footer 좌측 content   */
 .footerContents span {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: #9ca3af;
 }
 
