@@ -4,7 +4,6 @@
  * @param {i 태그 자신} iconElement
  */
 function togglePasswordVisibility(inputId, iconElement) {
-  debugger;
   let passwordInput = document.getElementById(inputId);
 
   if (passwordInput.type === "password") {
@@ -19,6 +18,6 @@ function togglePasswordVisibility(inputId, iconElement) {
 }
 
 //  index.html로 이동
-const goHomepage = () => {
-  window.location.href = "/index.html";
-};
+// const goHomepage = () => {
+//   window.location.href = "/index.html";
+// };
