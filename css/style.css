@@ -1,22 +1,17 @@
 /* 전체 적용 (margin,padding) */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Pretendard, sans-serif;
-}
 
-html {
+/* html {
   font-size: 16px;
-}
+} */
 
 /* header fixed로 인한 contents 영역 침범으로 인한 padding-top */
 body {
-  padding-top: 70px;
+  /* padding-top: 70px; */
+  margin: 0;
 }
 
 /* 헤더 */
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,80 +38,124 @@ header {
   background-color: #3692ff;
   color: white;
   border-radius: 8px;
-  padding: 0.75rem 1.4rem;
+  padding: 12px 23px;
   text-align: center;
+  align-content: center;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.625rem;
-  width: 8rem;
-  height: 3rem;
+  font-size: 1.6rem;
+  width: 128px;
+  height: 48px;
   white-space: nowrap;
 }
 
 /* 상단 배너 */
 .contents {
-  display: flex;
+  /* display: flex;
   background-color: #cfe5ff;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   width: 100%;
-  z-index: 11;
+  z-index: 11; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 54rem;
+  background-color: #cfe5ff;
 }
 
 /* 상단/하단 배너 요소의 박스요소 스타일 적용  */
 .contents .content {
-  width: 100%;
+  /* width: 100%;
   display: flex;
   align-items: flex-start;
   flex-direction: row;
   gap: 2rem;
   align-items: center;
-  max-width: fit-content;
+  max-width: fit-content; */
+
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 /* content > h2, a 태그 */
 .content-text {
-  flex: 1;
-  text-align: left;
+  /* flex: 1;
+  text-align: left; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 35.7rem;
+  height: 26rem;
 }
 
 /* 상단/하단 배너 요소의 박스 안 h태그 스타일 적용 */
-.content h2 {
+/* .content h2 {
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 3.5rem;
+} */
+
+.content-title {
+  font-size: 4rem;
+  font-weight: 7rem;
+  line-height: 140%;
+  color: var(--gray700);
+}
+
+.content-title span {
+  display: block;
 }
 
 /* 배너 요소 안 '구경하러 가기' 버튼 스타일 적용 */
 .contentBtn {
-  display: inline-block;
+  /* display: inline-block;
   padding: 1rem 10%;
   background-color: #3692ff;
   border-radius: 40px;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.25rem;
-  /* text-align: center; */
-  /* flex-wrap: nowrap; */
+  font-size: 1.25rem; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 35.7rem;
+  height: 5.6rem;
+
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 4rem;
+
+  font-size: 2rem;
+  font-weight: 60rem;
+  text-decoration: none;
 }
 
 /* 배너(contents) 안의 이미지 요소 크기 적용 */
 .contentImg {
-  /* flex-shrink: 0; */
-  width: 40vw;
-  /* max-width: 50%; */
+  /* width: 40vw;
   height: auto;
   object-fit: contain;
-  align-items: end;
+  align-items: end; */
+  width: 74.6rem;
+  height: 34rem;
 }
 
 /* main 컨텐츠 Display 적용 */
 .mainContents {
-  display: flex;
+  /* display: flex;
   background-color: white;
+  flex-direction: column; */
+  width: 100%;
+  display: flex;
   flex-direction: column;
 }
 
@@ -133,6 +172,10 @@ header {
   border-radius: 12px;
 }
 
+.mainContent_even {
+  flex-direction: row-reverse;
+}
+
 /* main 컨텐츠 이미지 요소 크기 적용 */
 .mainContentImg {
   width: 50%;
@@ -144,7 +187,7 @@ header {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.2rem;
   flex-wrap: nowrap;
 }
 

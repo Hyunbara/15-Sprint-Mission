@@ -10,6 +10,7 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
+    <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <!-- normalize.css cdn 이용 -->
     <link
@@ -23,13 +24,9 @@
   </head>
   <body>
     <!-- header -->
-    <header>
+    <header class="header">
       <a href="/">
-        <img
-          src="/images/panda-market-logo.png"
-          alt="판다마켓"
-          class="headerImg"
-        />
+        <img src="/images/panda-market-logo.png" alt="판다마켓" class="headerImg" />
       </a>
       <a href="/html/login.html" class="loginBtn">로그인</a>
     </header>
@@ -39,17 +36,15 @@
       <section class="contents">
         <div class="content">
           <div class="content-text">
-            <h2>
-              일상의 모든 물건을 <br />
+            <h2 class="content-title">
+              <span>일상의 모든 물건을</span>
               거래해보세요
             </h2>
-            <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+            <div class="explore-button-container">
+              <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+            </div>
           </div>
-          <img
-            src="/images/section_panda.png"
-            alt="일상의 모든 물건을 거래해보세요"
-            class="contentImg"
-          />
+          <img src="/images/section_panda.png" alt="일상의 모든 물건을 거래해보세요" class="contentImg" />
         </div>
       </section>
 
@@ -57,11 +52,7 @@
       <section class="mainContents">
         <!-- content1 -->
         <div class="mainContent">
-          <img
-            src="/images/main_content_img1.png"
-            alt="메인사진1"
-            class="mainContentImg"
-          />
+          <img src="/images/main_content_img1.png" alt="메인사진1" class="mainContentImg" />
           <div class="imageText">
             <h4>Hot item</h4>
             <h2>
@@ -74,6 +65,7 @@
 
         <!-- content2 -->
         <div class="mainContent_even">
+          <img src="/images/main_content_img2.png" alt="메인사진2" class="mainContentImg" />
           <div class="imageText">
             <h4>Search</h4>
             <h2>
@@ -82,20 +74,11 @@
             </h2>
             <p>구매하고 싶은 물품은 검색해서 쉽게 찾아보세요</p>
           </div>
-          <img
-            src="/images/main_content_img2.png"
-            alt="메인사진2"
-            class="mainContentImg"
-          />
         </div>
 
         <!-- content3 -->
         <div class="mainContent">
-          <img
-            src="/images/main_content_img3.png"
-            alt="메인사진3"
-            class="mainContentImg"
-          />
+          <img src="/images/main_content_img3.png" alt="메인사진3" class="mainContentImg" />
           <div class="imageText">
             <h4>Register</h4>
             <h2>
@@ -115,11 +98,7 @@
             판다마켓 중고거래
           </h2>
         </div>
-        <img
-          src="/images/footer_content_panda.png"
-          alt="믿을 수 있는 판다마켓 중고거래"
-          class="contentImg"
-        />
+        <img src="/images/footer_content_panda.png" alt="믿을 수 있는 판다마켓 중고거래" class="contentImg" />
       </section>
     </main>
 

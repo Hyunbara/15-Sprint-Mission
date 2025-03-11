@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pretendard, sans-serif;
+}
+
+:root {
+  --gray900: #111827;
+  --gray800: #1f2947;
+  --gray700: #374151;
+  --gray600: #4b5563;
+  --gray500: #6b7280;
+  --gray400: #9ca3af;
+  --gray200: #e5e7eb;
+  --gray100: #f3f4f6;
+  --gray50: #f9fafb;
+  --blue: #3692ff;
+  --hover-button: #1967d6;
+  --white: #ffffff;
+  --background: #cfe5ff;
+  --skyblue: #e6f2ff;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+  font-family: Pretendard, sans-serif;
+  font-size: 10px;
+}
