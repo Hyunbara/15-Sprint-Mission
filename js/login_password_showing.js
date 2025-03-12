@@ -4,7 +4,6 @@
  * @param {i 태그 자신} iconElement
  */
 function togglePasswordVisibility(inputId, iconElement) {
-  debugger;
   let passwordInput = document.getElementById(inputId);
 
   if (passwordInput.type === "password") {
