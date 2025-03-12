@@ -160,5 +160,7 @@ body {
   font-size: 1.4rem;
 }
 
-@media screen {
+/* 태블릿과 PC에서는 동일한 스타일을 유지하므로 별도 스타일 변경 없음 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* PC와 동일한 디자인을 유지하기 위해 스타일을 추가하지 않음 */
 }

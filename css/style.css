@@ -118,6 +118,7 @@ body {
   padding: 5% 30%;
   gap: 5%;
   background-color: #fcfcfc;
+  width: 100%;
 
   display: flex;
   justify-content: space-between;
@@ -348,8 +349,10 @@ footer {
   }
 
   .mainContents {
-    width: 344px;
+    width: 100%;
     gap: 40px;
+
+    display: flex;
   }
 
   .mainContent,
@@ -372,10 +375,14 @@ footer {
 
   .footerPolicy {
     display: flex;
-    justify-content: flex-start;
-    gap: 70px;
+    justify-content: space-between;
+    gap: 30px;
     width: 181.11px;
+  }
+
+  .footerPolicy a {
     font-size: 1.6rem;
+    font-family: Arial;
   }
 
   .footerSns {
@@ -393,5 +400,6 @@ footer {
     position: absolute; /* 절대 위치 설정 */
     left: 10px;
     top: 60px;
+    font-size: 1.6rem;
   }
 }
