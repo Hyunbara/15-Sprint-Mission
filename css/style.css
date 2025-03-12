@@ -362,7 +362,36 @@ footer {
   }
 
   .footerContents {
-    padding: 32px 32px 64px 32px;
-    height: 160px;
+    position: relative; /* 기준이 되는 요소 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+  }
+
+  .footerPolicy {
+    display: flex;
+    justify-content: flex-start;
+    gap: 70px;
+    width: 181.11px;
+    font-size: 1.6rem;
+  }
+
+  .footerSns {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 요소 사이 간격 */
+  }
+
+  .footerSns a img {
+    width: 24px; /* 아이콘 크기 */
+    height: 24px;
+  }
+
+  .footerContents span {
+    position: absolute; /* 절대 위치 설정 */
+    left: 10px;
+    top: 60px;
   }
 }
