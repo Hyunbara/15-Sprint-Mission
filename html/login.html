@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/favicon.ico" />
+    <!-- common.css 추가 -->
+    <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/account.css" />
     <!-- pretendard cdn -->
     <link
@@ -21,49 +23,27 @@
       referrerpolicy="no-referrer"
     />
     <!-- fontAwsome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
     <title>Login</title>
   </head>
   <body>
     <div class="login-page">
       <div class="form">
-        <img
-          src="/images/panda-market-logo.png"
-          alt="판다마켓 이미지"
-          class="form-image"
-          onclick="goHomepage()"
-        />
+        <img src="/images/panda-market-logo.png" alt="판다마켓 이미지" class="form-image" onclick="goHomepage()" />
         <!-- login form -->
         <form class="login-form">
           <!-- email label -->
           <label for="form-email">
             이메일
-            <input
-              type="text"
-              name="userEmail"
-              placeholder="codeit@email.com"
-              id="form-email"
-            />
+            <input type="text" name="userEmail" placeholder="codeit@email.com" id="form-email" />
           </label>
 
           <!-- password label -->
           <label for="form-password"
             >비밀번호
             <div class="password-box">
-              <input
-                type="password"
-                name="userPassword"
-                placeholder="password"
-                id="form-password"
-              />
-              <i
-                class="fa-regular fa-eye toggle-password"
-                onclick="togglePasswordVisibility('form-password', this)"
-              ></i>
+              <input type="password" name="userPassword" placeholder="password" id="form-password" />
+              <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility('form-password', this)"></i>
             </div>
           </label>
 
@@ -72,15 +52,8 @@
           <div class="easy-login">
             <span>간편 로그인 하기</span>
             <div class="easy-login-icon">
-              <a href="https://www.google.com/">
-                <img src="/images/login_img/google_img.png"
-              /></a>
-              <a
-                href="https://www.kakaocorp.com/page/service/service/KakaoTalk"
-                class="kakao-img"
-              >
-                <img src="/images/login_img/kakako_img.png"
-              /></a>
+              <a href="https://www.google.com/"> <img src="/images/login_img/google_img.png" /></a>
+              <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk" class="kakao-img"> <img src="/images/login_img/kakako_img.png" /></a>
             </div>
           </div>
           <!-- 최하단 메시지 요소 -->
