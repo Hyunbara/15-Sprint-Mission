@@ -2,9 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Pretendard, sans-serif;
 }
 
+/* 스프린트 미션2 심화 요구사항 */
 :root {
   --gray900: #111827;
   --gray800: #1f2947;
