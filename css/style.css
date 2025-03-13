@@ -208,6 +208,7 @@ footer {
 }
 
 /* 태블릿 사이즈 반응형 구현 */
+/* 아이패드 에어를 기준으로 구현하였습니다. (820 x 1180) */
 @media (max-width: 1199px) {
   .header {
     padding: 0 24px;
@@ -312,6 +313,7 @@ footer {
 }
 
 /* 모바일 반응형 구현 */
+/* iPhone 12 Pro를 기준으로 구현하였습니다. (390 x 844) */
 @media (max-width: 767px) {
   html,
   body {
