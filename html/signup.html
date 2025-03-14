@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/favicon.ico" />
+
+    <!-- common.css 추가 -->
+    <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/account.css" />
+
+    <!-- 비밀번호 showing clickEvent -->
+    <script src="/js/login_password_showing.js"></script>
+
     <!-- pretendard cdn -->
     <link
       rel="stylesheet"
@@ -21,61 +28,34 @@
       referrerpolicy="no-referrer"
     />
     <!-- fontAwsome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
     <title>signup</title>
   </head>
   <body>
     <div class="login-page">
       <div class="form">
-        <img
-          src="/images/panda-market-logo.png"
-          alt="판다마켓 이미지"
-          class="form-image"
-          onclick="goHomepage()"
-        />
+        <img src="/images/panda-market-logo.png" alt="판다마켓 이미지" class="form-image" onclick="goHomepage()" />
         <!-- 회원 가입 폼 -->
         <form class="submit-form">
           <!-- 이메일 -->
           <label for="submit-email">
             이메일
-            <input
-              type="text"
-              name="userEmail"
-              placeholder="codeit@email.com"
-              id="form-email"
-            />
+            <input type="text" name="userEmail" placeholder="codeit@email.com" id="form-email" />
           </label>
 
           <!-- 닉네임 -->
           <label for="submit-name">
             닉네임
-            <input
-              type="text"
-              name="userName"
-              placeholder="panda"
-              id="form-name"
-            />
+            <input type="text" name="userName" placeholder="panda" id="form-name" />
           </label>
 
           <!-- 패스워드 -->
           <label for="form-password"
             >비밀번호
             <div class="password-box">
-              <input
-                type="password"
-                name="userPassword"
-                placeholder="password"
-                id="form-password"
-              />
+              <input type="password" name="userPassword" placeholder="password" id="form-password" />
               <!-- fontawesome 비밀번호 표시 -->
-              <i
-                class="fa-regular fa-eye toggle-password"
-                onclick="togglePasswordVisibility('form-password', this)"
-              ></i>
+              <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility('form-password', this)"></i>
             </div>
           </label>
 
@@ -83,16 +63,8 @@
           <label for="form-password-check"
             >비밀번호확인
             <div class="password-box">
-              <input
-                type="password"
-                name="userPassword"
-                placeholder="password"
-                id="form-password-check"
-              />
-              <i
-                class="fa-regular fa-eye toggle-password"
-                onclick="togglePasswordVisibility('form-password-check', this)"
-              ></i>
+              <input type="password" name="userPassword" placeholder="password" id="form-password-check" />
+              <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility('form-password-check', this)"></i>
             </div>
           </label>
 
@@ -102,15 +74,8 @@
           <div class="easy-login">
             <span>간편 로그인 하기</span>
             <div class="easy-login-icon">
-              <a href="https://www.google.com/">
-                <img src="/images/login_img/google_img.png"
-              /></a>
-              <a
-                href="https://www.kakaocorp.com/page/service/service/KakaoTalk"
-                class="kakao-img"
-              >
-                <img src="/images/login_img/kakako_img.png"
-              /></a>
+              <a href="https://www.google.com/"> <img src="/images/login_img/google_img.png" /></a>
+              <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk" class="kakao-img"> <img src="/images/login_img/kakako_img.png" /></a>
             </div>
           </div>
 
@@ -124,6 +89,5 @@
         </form>
       </div>
     </div>
-    <script src="/js/login_password_showing.js"></script>
   </body>
 </html>

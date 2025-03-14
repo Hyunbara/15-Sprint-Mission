@@ -1,22 +1,17 @@
 /**
- *  0303 hyun
- * @param {input태그의 id} inputId
+ *
+ * @param {input태그 id} inputId
  * @param {i 태그 자신} iconElement
  */
-function togglePasswordVisibility(inputId, iconElement) {
-  debugger;
-  let passwordInput = document.getElementById(inputId);
+const togglePasswordVisibility = (inputId, iconElement) => {
+  const passwordInput = document.getElementById(inputId);
+  const isPassword = passwordInput.type === "password";
 
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    iconElement.classList.remove("fa-eye"); // 눈 뜬 모양
-    iconElement.classList.add("fa-eye-slash"); // 슬래시 눈 모양
-  } else {
-    passwordInput.type = "password";
-    iconElement.classList.remove("fa-eye-slash"); // 슬래시 눈 모양
-    iconElement.classList.add("fa-eye"); // 눈 뜬 모양
-  }
-}
+  passwordInput.type = isPassword ? "text" : "password";
+
+  iconElement.classList.toggle("fa-eye", !isPassword); // 눈 아이콘 토글
+  iconElement.classList.toggle("fa-eye-slash", isPassword); // 슬래시 아이콘 토글
+};
 
 //  index.html로 이동
 const goHomepage = () => {

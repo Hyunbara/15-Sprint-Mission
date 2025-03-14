@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph  -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:url" content="https://hyunbara.netlify.app/" />
+    <meta property="og:image" content="https://hyunbara.netlify.app/images/Preview-Image.jpg" />
+
+    <!-- Twitter Open Graph -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta name="twitter:image" content="https://hyunbara.netlify.app/images/Preview-Image.jpg" />
+
+    <!-- favicon -->
     <link rel="icon" href="/images/favicon.ico" />
     <link
       rel="stylesheet"
@@ -10,7 +25,14 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
+
+    <!-- common.css 추가 -->
+    <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- 모바일 크기일 때 헤더 이미지 변경 -->
+    <script defer src="/js/mobile_changeImg.js"></script>
+
     <!-- normalize.css cdn 이용 -->
     <link
       rel="stylesheet"
@@ -22,14 +44,10 @@
     <title>판다마켓</title>
   </head>
   <body>
-    <!-- header -->
-    <header>
+    <!-- header class명 추가 -->
+    <header class="header">
       <a href="/">
-        <img
-          src="/images/panda-market-logo.png"
-          alt="판다마켓"
-          class="headerImg"
-        />
+        <img src="/images/panda-market-logo.png" alt="판다마켓" class="headerImg" />
       </a>
       <a href="/html/login.html" class="loginBtn">로그인</a>
     </header>
@@ -38,18 +56,16 @@
       <!-- top banner -->
       <section class="contents">
         <div class="content">
-          <div class="content-text">
-            <h2>
-              일상의 모든 물건을 <br />
+          <div class="contentText">
+            <h2 class="contentTitle">
+              <span>일상의 모든 물건을</span>
               거래해보세요
             </h2>
-            <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+            <div class="contentBtn-container">
+              <a href="/html/items.html" class="contentBtn">구경하러 가기</a>
+            </div>
           </div>
-          <img
-            src="/images/section_panda.png"
-            alt="일상의 모든 물건을 거래해보세요"
-            class="contentImg"
-          />
+          <img src="/images/section_panda.png" alt="일상의 모든 물건을 거래해보세요" class="contentImg" />
         </div>
       </section>
 
@@ -57,11 +73,7 @@
       <section class="mainContents">
         <!-- content1 -->
         <div class="mainContent">
-          <img
-            src="/images/main_content_img1.png"
-            alt="메인사진1"
-            class="mainContentImg"
-          />
+          <img src="/images/main_content_img1.png" alt="메인사진1" class="mainContentImg" />
           <div class="imageText">
             <h4>Hot item</h4>
             <h2>
@@ -74,6 +86,7 @@
 
         <!-- content2 -->
         <div class="mainContent_even">
+          <img src="/images/main_content_img2.png" alt="메인사진2" class="mainContentImg" />
           <div class="imageText">
             <h4>Search</h4>
             <h2>
@@ -82,20 +95,11 @@
             </h2>
             <p>구매하고 싶은 물품은 검색해서 쉽게 찾아보세요</p>
           </div>
-          <img
-            src="/images/main_content_img2.png"
-            alt="메인사진2"
-            class="mainContentImg"
-          />
         </div>
 
         <!-- content3 -->
         <div class="mainContent">
-          <img
-            src="/images/main_content_img3.png"
-            alt="메인사진3"
-            class="mainContentImg"
-          />
+          <img src="/images/main_content_img3.png" alt="메인사진3" class="mainContentImg" />
           <div class="imageText">
             <h4>Register</h4>
             <h2>
@@ -110,16 +114,14 @@
       <!-- bottom banner  -->
       <section class="contents">
         <div class="content">
-          <h2>
-            믿을 수 있는 <br />
-            판다마켓 중고거래
-          </h2>
+          <div class="contentText">
+            <h2 class="contentTitle" style="text-align: center">
+              <span>믿을 수 있는 </span><br />
+              판다마켓 중고거래
+            </h2>
+          </div>
+          <img src="/images/footer_content_panda.png" alt="믿을 수 있는 판다마켓 중고거래" class="contentImg" />
         </div>
-        <img
-          src="/images/footer_content_panda.png"
-          alt="믿을 수 있는 판다마켓 중고거래"
-          class="contentImg"
-        />
       </section>
     </main>
 

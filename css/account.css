@@ -1,22 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  font-family: Pretendard, sans-serif;
-  font-size: 10px;
-}
-
 body {
   height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  font-family: Pretendard, sans-serif;
 }
 
 /* 최상위 컨테이너 */
@@ -51,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #333;
   width: 100%;
@@ -64,11 +51,19 @@ body {
   width: 100%;
   height: 48px;
   padding: 12px 24px;
-  border: 1px solid #ddd;
+  border: 1px solid #f3f4f6;
   border-radius: 12px;
   background-color: #f3f4f6;
-  font-size: 16px;
+  font-size: 1.6rem;
   outline: none;
+}
+
+/* placeholder 스타일링 */
+.form input::placeholder {
+  color: #9ca3af;
+  opacity: 0.5;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 /* password input과 i 태그를 감싼 부모 Div 배치 */
@@ -92,7 +87,6 @@ body {
   cursor: pointer;
 }
 
-/* 사용자가 동작하는지 모를 수도 있기에 hover로 색넣음 */
 .toggle-password:hover {
   color: #3692ff;
 }
@@ -101,7 +95,7 @@ body {
 .form button {
   width: 100%;
   height: 56px;
-  background-color: #3692ff;
+  background-color: #9ca3af;
   color: #f3f4f6;
   font-size: 2rem;
   font-weight: 600;
@@ -170,4 +164,49 @@ body {
   color: #3692ff;
   font-weight: 500;
   font-size: 1.4rem;
+}
+
+/* 태블릿과 PC에서는 동일한 스타일을 유지하므로 별도 스타일 변경 없음 */
+/* 아이패드 에어를 기준으로 구현하였습니다. (820 x 1180) */
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+
+/* 모바일 반응형 구현 */
+/* iPhone 12 Pro를 기준으로 구현하였습니다. (390 x 844) */
+@media (max-width: 767px) {
+  .login-page {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .form-image {
+    width: 198px;
+    height: 66px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  .password-box {
+    width: 100%;
+  }
+
+  .form button {
+    width: 100%;
+  }
+
+  .easy-login {
+    width: 100%;
+  }
+
+  .message-box {
+    width: 100%;
+  }
 }
