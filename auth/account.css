@@ -101,13 +101,13 @@ body {
   font-weight: 600;
   border: none;
   border-radius: 25px;
-  cursor: pointer;
+  /* cursor: pointer; */
   margin-top: 10px;
 }
 
-.form button:hover {
+/* .form button:hover {
   background-color: #3578e5;
-}
+} */
 
 /* 간편 로그인 배치 */
 .easy-login {
