@@ -1,8 +1,7 @@
 /**
  *  모바일일 때, headerImg의 src를 변경하는 함수
  */
-
-export const mobileChangeImg = () => {
+const mobileChangeImg = () => {
   // 헤더 판다마켓 로고 태그
   const headerImg = document.querySelector(".headerImg");
 
@@ -16,3 +15,9 @@ export const mobileChangeImg = () => {
     headerImg.style.width = "";
   }
 };
+
+// 페이지 로드될 때 동작
+window.addEventListener("load", mobileChangeImg);
+
+// 강제로 브라우저 창 크기 변경 시 동작
+window.addEventListener("resize", mobileChangeImg);
