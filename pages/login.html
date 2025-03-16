@@ -11,6 +11,7 @@
 
     <!-- defer 추가 -->
     <script defer src="/auth/login_password_showing.js"></script>
+    <script defer src="/ui/input_events.js"></script>
 
     <!-- pretendard cdn -->
     <link
@@ -45,17 +46,19 @@
             이메일
             <input type="text" name="userEmail" placeholder="codeit@email.com" id="form-email" />
           </label>
+          <p id="email-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
 
           <!-- password label -->
-          <label for="form-password"
-            >비밀번호
+          <label for="form-password">
+            비밀번호
             <div class="password-box">
               <input type="password" name="userPassword" placeholder="password" id="form-password" />
               <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility('form-password', this)"></i>
             </div>
           </label>
+          <p id="password-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
 
-          <button class="btn-login">로그인</button>
+          <button id="btn-login">로그인</button>
           <!-- 간편 로그인 -->
           <div class="easy-login">
             <span>간편 로그인 하기</span>
