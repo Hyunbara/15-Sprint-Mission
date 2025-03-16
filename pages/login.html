@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/auth/account.css" />
 
     <!-- defer 추가 -->
-    <script defer src="/auth/login_password_showing.js"></script>
-    <script defer src="/ui/input_events.js"></script>
+    <script defer src="/auth/toggle-password.js"></script>
+    <script type="module" defer src="/auth/login-validation.js"></script>
 
     <!-- pretendard cdn -->
     <link
@@ -46,6 +46,8 @@
             이메일
             <input type="text" name="userEmail" placeholder="codeit@email.com" id="form-email" />
           </label>
+
+          <!-- 로그인 유효성 검사 에러 메세지 -->
           <p id="email-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
 
           <!-- password label -->
@@ -56,9 +58,11 @@
               <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility('form-password', this)"></i>
             </div>
           </label>
+
+          <!-- 패스워드 유효성 검사 에러 메세지 -->
           <p id="password-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
 
-          <button id="btn-login" onclick="location.href='/pages/items.html'" type="button">로그인</button>
+          <button id="btn-login" class="auth-button" onclick="location.href='/pages/items.html'" type="button">로그인</button>
           <!-- 간편 로그인 -->
           <div class="easy-login">
             <span>간편 로그인 하기</span>

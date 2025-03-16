@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="/common/common.css" />
     <link rel="stylesheet" href="/auth/account.css" />
 
-    <!-- 비밀번호 showing clickEvent -->
-    <script defer src="/auth/login_password_showing.js"></script>
+    <!-- 비밀번호 표시 로직, 회원가입 로직 추가 -->
+    <script defer src="/auth/toggle-password.js"></script>
+    <script type="module" defer src="/auth/signup-validation.js"></script>
 
     <!-- pretendard cdn -->
     <link
@@ -43,6 +44,9 @@
             <input type="text" name="userEmail" placeholder="codeit@email.com" id="form-email" />
           </label>
 
+          <!-- 로그인 유효성 검사 에러 메세지 -->
+          <p id="email-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
+
           <!-- 닉네임 -->
           <label for="submit-name">
             닉네임
@@ -59,6 +63,9 @@
             </div>
           </label>
 
+          <!-- 패스워드 유효성 검사 에러 메세지 -->
+          <p id="password-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none"></p>
+
           <!-- 비밀번호 확인 -->
           <label for="form-password-check"
             >비밀번호확인
@@ -68,7 +75,11 @@
             </div>
           </label>
 
-          <button>회원가입</button>
+          <p id="password-check-error" style="color: red; font-size: 14px; font-weight: 600; text-align: left; margin-bottom: 24px; display: none">
+            비밀번호가 일치하지 않습니다.
+          </p>
+
+          <button id="btn-signup" class="auth-button">회원가입</button>
 
           <!-- 간편 로그인 -->
           <div class="easy-login">
