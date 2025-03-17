@@ -1,12 +1,12 @@
-// 공통 입력 요소
+// 공통 입력 요소 ( 이메일, 비밀번호)
 export const emailInput = document.querySelector("#form-email");
 export const passwordInput = document.querySelector("#form-password");
 
-// 회원가입 전용 입력 요소
+// 회원가입 전용 입력 요소 (닉네임, 비밀번호 확인)
 export const nameInput = document.querySelector("#form-name");
 export const passwordCheckInput = document.querySelector("#form-password-check");
 
-// 에러 메시지 요소
+// 에러 메시지 요소 (이메일, 패스워드, 패스워드 확인)
 export const emailError = document.querySelector("#email-error");
 export const passwordError = document.querySelector("#password-error");
 export const passwordCheckError = document.querySelector("#password-check-error");

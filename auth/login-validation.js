@@ -62,3 +62,7 @@ const loginBtnToggle = () => {
 // focusout 이벤트
 emailInput.addEventListener("focusout", emailCheck);
 passwordInput.addEventListener("focusout", passwordCheck);
+
+// 초기 로그인 버튼 비활성화
+loginBtn.disabled = true;
+loginBtn.style.cursor = "not-allowed";

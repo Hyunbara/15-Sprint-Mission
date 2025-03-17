@@ -114,6 +114,6 @@ emailInput.addEventListener("focusout", emailCheck);
 passwordInput.addEventListener("focusout", passwordCheck);
 passwordCheckInput.addEventListener("focusout", passwordDblCheck);
 
-// 로그인 버튼 요소 초기 상태 설정
-// signupBtn.style.cursor = "not-allowed";
-// signupBtn.disabled = true;
+// 회원가입 버튼 요소 초기 상태 설정
+signupBtn.style.cursor = "not-allowed";
+signupBtn.disabled = true;
