@@ -13,25 +13,6 @@ import {
   isPasswordCheckValid,
 } from "./validation-common.js";
 
-// const emailInput = document.querySelector("#form-email");
-// const nameInput = document.querySelector("#form-name");
-// const passwordInput = document.querySelector("#form-password");
-// const passwordCheckInput = document.querySelector("#form-password-check");
-
-// const emailError = document.querySelector("#email-error");
-// const passwordError = document.querySelector("#password-error");
-// const passwordCheckError = document.querySelector("#password-check-error");
-
-// // 이메일 유효성 검사 패턴
-// const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-// // 로그인 버튼 (login.html)
-// const signupBtn = document.querySelector("#btn-signup");
-
-// let isEmailValid = false;
-// let isPasswordValid = false;
-// let isPasswordCheckValid = false;
-
 // 이메일 유효성 검사 함수
 const emailCheck = () => {
   // 이메일 값 공백 제거 후 가져오기.
