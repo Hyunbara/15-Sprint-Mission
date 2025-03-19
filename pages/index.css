@@ -17,7 +17,8 @@
 
 /* 헤더 이미지 */
 .headerImg {
-  width: 30%;
+  /* 30% */
+  width: 14rem;
   height: auto;
 }
 
