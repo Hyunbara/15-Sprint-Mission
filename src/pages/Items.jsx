@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../api/productApi";
+import BestProduct from "../components/BestProducts";
+import ProductList from "../components/ProductList";
 
 const Items = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts().then((data) => {
+    getProducts("?page=1&pageSize=300&orderBy=recent").then((data) => {
       setProducts(data.list);
     });
   }, []);
@@ -13,14 +15,8 @@ const Items = () => {
   return (
     <div>
       <h2>상품 리스트</h2>
-      {products.map((item) => (
-        <div key={item.id}>
-          <h3>제목: {item.name}</h3>
-          {item.images.length > 0 && <img src={item.images[0]} alt={item.name} style={{ width: "221px", height: "221px", borderRadius: "16px" }} />}
-          <p>설명: {item.description}</p>
-          <p>{item.price}원</p>
-        </div>
-      ))}
+      <BestProduct />
+      <ProductList products={products} />
     </div>
   );
 };
