@@ -1,7 +1,5 @@
-export const getProduct = () => {
-  return fetch("https://panda-market-api.vercel.app/products")
-    .then((res) => res.json())
-    .then((data) => {
-      return data;
-    });
+export const getProducts = async () => {
+  const response = await fetch("https://panda-market-api.vercel.app/products");
+  const data = await response.json();
+  return data;
 };
