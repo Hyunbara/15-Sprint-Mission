@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import Items from "./components/Items";
-import "./App.css";
+import Items from "./pages/Items";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
         <nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/board">자유게시판</NavLink>
-          <NavLink to="/items">중고마켓</NavLink>
+          <NavLink to="items">중고마켓</NavLink>
         </nav>
       </header>
       <Routes>
