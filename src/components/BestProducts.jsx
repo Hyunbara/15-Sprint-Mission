@@ -1,5 +1,6 @@
 import { getProducts } from "../api/productApi";
 import { useState, useEffect } from "react";
+import "./BestProduct.css";
 
 const BestProduct = () => {
   const [bestProducts, setBestProducts] = useState([]);
@@ -11,23 +12,19 @@ const BestProduct = () => {
   }, []);
 
   return (
-    <section>
-      <h3>🔥 베스트 상품 TOP 4</h3>
-      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+    <section className="best-products">
+      <h3 className="best-products__title">🔥 베스트 상품 TOP 4</h3>
+      <div className="best-products__grid">
         {bestProducts.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              border: "1px solid #ccc",
-              borderRadius: "8px",
-              padding: "12px",
-              width: "200px",
-            }}
-          >
-            {item.images.length > 0 && <img src={item.images[0]} alt={item.name} style={{ width: "100%", height: "150px", objectFit: "cover" }} />}
-            <h4>{item.name}</h4>
-            <p>{item.price}원</p>
-            <p>❤️ {item.favoriteCount}</p>
+          <div key={item.id} className="product-card">
+            <div className="product-card__image-wrapper">
+              <img src={item.images.length > 0 ? item.images[0] : ""} alt={item.name} className="product-card__image" />
+            </div>
+            <div className="product-card__text-group">
+              <p className="product-card__title">{item.name}</p>
+              <p className="product-card__price">{item.price.toLocaleString()}원</p>
+              <p className="product-card__favorite">❤️ {item.favoriteCount}</p>
+            </div>
           </div>
         ))}
       </div>
