@@ -3,7 +3,7 @@ import "./Pagination.css";
 // currentPage: 현재 보고 있는 페이지 번호
 // totalPages: 전체 페이지 수
 // onPageChange: 페이지를 바꿀 때 마다 호출되는 함수 (setPage)
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({ currentPage, totalPage, onPageChange }) => {
   // 5개씩 자르기위한 그룹의 크기(한 그룹당 5개).
   const pageGroupSize = 5;
 
@@ -13,7 +13,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   // 현재 페이지 그룹의 시작 번호
   const startPage = currentGroup * pageGroupSize + 1;
 
-  const endPage = Math.min(startPage + pageGroupSize - 1, totalPages);
+  const endPage = Math.min(startPage + pageGroupSize - 1, totalPage);
 
   const pageButtons = [];
 
@@ -34,7 +34,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   }
 
   // 다음 그룹 페이지로 이동하는 버튼
-  if (endPage < totalPages) {
+  if (endPage < totalPage) {
     pageButtons.push(
       <button key="next" onClick={() => onPageChange(endPage + 1)} className="pagination-button">
         &gt;
