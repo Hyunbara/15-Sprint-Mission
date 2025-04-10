@@ -10,8 +10,8 @@
 }
 
 .product-card__text-group {
-  margin-top: 8px;
   display: flex;
+  margin-top: 8px;
   flex-direction: column;
 }
 
@@ -24,10 +24,12 @@
 .product-card__title {
   font-size: 14px;
   font-weight: 500;
+  margin-bottom: -5px;
 }
 
 .product-card__price {
   font-size: 16px;
+  margin-bottom: -3px;
 }
 
 .product-card__favorite {

@@ -5,7 +5,15 @@ const ProductCard = ({ item }) => {
   return (
     <div className="product-card">
       <div className="product-card__image-wrapper">
-        {<img src={item.images.length > 0 ? item.images[0] : noImage} alt={item.name} className="product-card__image" />}
+        <img
+          src={item.images.length > 0 ? item.images[0] : noImage}
+          alt={item.name}
+          className="product-card__image"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = noImage;
+          }}
+        />
       </div>
       <div className="product-card__text-group">
         <p className="product-card__title">{item.name}</p>
