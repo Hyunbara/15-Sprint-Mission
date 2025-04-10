@@ -6,12 +6,9 @@ import SearchInput from "./SearchInput";
 import { useNavigate } from "react-router-dom";
 
 /**
- * 전체 상품 목록을 카드 형태로 표시하는 컴포넌트입니다.
- * 검색어 필터링, 정렬, 페이징기능 포함
- * @param {Array} products  - 전체 상품 데이터 배열
- *
+ *  전체 상품 목록을 카드 형태로 표시하는 컴포넌트 입니다.
+ *  검색어 기능, 정렬, 페이징 기능이 포함되어있습니다.
  */
-
 const ProductList = ({ products }) => {
   const [orderBy, setOrderBy] = useState("recent");
   const [page, setPage] = useState(1);
@@ -21,7 +18,7 @@ const ProductList = ({ products }) => {
 
   const pageSize = 10; // 한 페이지에 보여줄 상품 수
 
-  const [responsivePageSize, setResponsivePageSize] = useState(10);
+  const [responsivePageSize, setResponsivePageSize] = useState(10); // 기본값 10
 
   // option 값에 따라 정렬된 상품 리스트를 보여줌 (desc)
   const sortedProducts = [...products].sort((a, b) => {
@@ -29,9 +26,6 @@ const ProductList = ({ products }) => {
     return new Date(b.createdAt) - new Date(a.createdAt);
   });
 
-  // 1. 검색어에 따라 필터링된 상품 리스트 리턴
-  // 2. 필터링된 상품중 현재 페이지에 해당하는 10개 추출 (ex. 3페이지면 (3-1) * 10 = 20 ~ 30번째까지 자름)
-  // const paginatedProducts = sortedProducts.filter((product) => product.name.includes(searchKeyword)).slice((page - 1) * pageSize, page * pageSize);
   const filteredProducts = sortedProducts.filter((product) => product.name.includes(searchKeyword));
 
   useEffect(() => {
@@ -48,10 +42,15 @@ const ProductList = ({ products }) => {
     };
 
     updatePageSize();
-
     window.addEventListener("resize", updatePageSize);
+
+    return () => {
+      // 메모리 누수가 일어 날 수 있으니 참조 해제
+      window.removeEventListener("resize", updatePageSize);
+    };
   }, []);
 
+  // 페이징 처리
   const paginatedProducts = filteredProducts.slice((page - 1) * responsivePageSize, page * responsivePageSize);
   const totalPage = Math.ceil(filteredProducts.length / responsivePageSize);
 
