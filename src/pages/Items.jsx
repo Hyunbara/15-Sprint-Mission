@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../api/productApi";
 import BestProduct from "../components/BestProducts";
 import ProductList from "../components/ProductList";
+import "./Items.css";
 
 const Items = () => {
   const [products, setProducts] = useState([]);
@@ -13,8 +14,7 @@ const Items = () => {
   }, []);
 
   return (
-    <div>
-      <h2>상품 리스트</h2>
+    <div className="items-wrapper">
       <BestProduct />
       <ProductList products={products} />
     </div>
