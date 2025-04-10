@@ -1,3 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 153px;
+  height: 51px;
+}
+
+.header__nav-container {
+  margin-left: 24px;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
 .active {
+  font-weight: bold;
   color: #3692ff;
+}
+
+.header__right .user_img {
+  width: 40px;
+  height: 40px;
 }
