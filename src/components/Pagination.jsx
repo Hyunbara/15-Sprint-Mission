@@ -1,4 +1,4 @@
-//import "./Pagination.css";
+import "./Pagination.css";
 
 // currentPage: 현재 보고 있는 페이지 번호
 // totalPages: 전체 페이지 수
@@ -19,7 +19,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
   // 이전 페이지 그룹으로 이동하는 버튼
   pageButtons.push(
-    <button key="prev" onClick={() => onPageChange(Math.max(1, startPage - pageGroupSize))} className="pagination-arrow">
+    <button key="prev" onClick={() => onPageChange(Math.max(1, startPage - pageGroupSize))} className="pagination-button">
       &lt;
     </button>
   );
@@ -27,7 +27,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   // 그룹 안의 페이지 번호들
   for (let i = startPage; i <= endPage; i++) {
     pageButtons.push(
-      <button key={i} onClick={() => onPageChange(i)} className={i === currentPage ? "pagination-button active" : "pagination-button"}>
+      <button key={i} onClick={() => onPageChange(i)} className="pagination-button">
         {i}
       </button>
     );
@@ -36,7 +36,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   // 다음 그룹 페이지로 이동하는 버튼
   if (endPage < totalPages) {
     pageButtons.push(
-      <button key="next" onClick={() => onPageChange(endPage + 1)} className="pagination-arrow">
+      <button key="next" onClick={() => onPageChange(endPage + 1)} className="pagination-button">
         &gt;
       </button>
     );
