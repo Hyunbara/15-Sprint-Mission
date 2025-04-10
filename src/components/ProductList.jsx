@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
 import "./ProductList.css";
@@ -21,7 +21,7 @@ const ProductList = ({ products }) => {
 
   const pageSize = 10; // 한 페이지에 보여줄 상품 수
 
-  const totalPages = Math.ceil(products.length / pageSize);
+  const [responsivePageSize, setResponsivePageSize] = useState(10);
 
   // option 값에 따라 정렬된 상품 리스트를 보여줌 (desc)
   const sortedProducts = [...products].sort((a, b) => {
@@ -31,7 +31,29 @@ const ProductList = ({ products }) => {
 
   // 1. 검색어에 따라 필터링된 상품 리스트 리턴
   // 2. 필터링된 상품중 현재 페이지에 해당하는 10개 추출 (ex. 3페이지면 (3-1) * 10 = 20 ~ 30번째까지 자름)
-  const paginatedProducts = sortedProducts.filter((product) => product.name.includes(searchKeyword)).slice((page - 1) * pageSize, page * pageSize);
+  // const paginatedProducts = sortedProducts.filter((product) => product.name.includes(searchKeyword)).slice((page - 1) * pageSize, page * pageSize);
+  const filteredProducts = sortedProducts.filter((product) => product.name.includes(searchKeyword));
+
+  useEffect(() => {
+    const updatePageSize = () => {
+      const width = window.innerWidth;
+
+      if (width <= 767) {
+        setResponsivePageSize(4);
+      } else if (width <= 1199) {
+        setResponsivePageSize(6);
+      } else {
+        setResponsivePageSize(10);
+      }
+    };
+
+    updatePageSize();
+
+    window.addEventListener("resize", updatePageSize);
+  }, []);
+
+  const paginatedProducts = filteredProducts.slice((page - 1) * responsivePageSize, page * responsivePageSize);
+  const totalPage = Math.ceil(filteredProducts.length / responsivePageSize);
 
   const handleOrderChange = (e) => {
     setOrderBy(e.target.value);
@@ -50,24 +72,24 @@ const ProductList = ({ products }) => {
         <h3>전체 상품</h3>
         <div className="product-list__actions">
           <SearchInput onSearch={handleSearch} />
-          <button onClick={() => nav("/additem")} className="add-item-button">
+          <button onClick={() => nav("/additem")} className="product-list__add-button">
             <span>상품 등록하기</span>
           </button>
-          <select value={orderBy} onChange={handleOrderChange} className="order-select">
+          <select value={orderBy} onChange={handleOrderChange} className="product-list__select">
             <option value="createdAt">최신순</option>
             <option value="favorite">좋아요순</option>
           </select>
         </div>
       </div>
 
-      <div className="product-list-grid">
+      <div className="product-list__grid">
         {paginatedProducts.map((item) => (
           <ProductCard key={item.id} item={item} />
         ))}
       </div>
 
       <div>
-        <Pagination currentPage={page} totalPages={totalPages} onPageChange={(newPage) => setPage(newPage)} />
+        <Pagination currentPage={page} totalPage={totalPage} onPageChange={(newPage) => setPage(newPage)} />
       </div>
     </section>
   );
