@@ -1,6 +1,6 @@
 import { getProducts } from "../api/productApi";
 import { useState, useEffect } from "react";
-import "./BestProduct.css";
+import "./BestProducts.css";
 
 const BestProduct = () => {
   const [bestProducts, setBestProducts] = useState([]);
@@ -13,7 +13,7 @@ const BestProduct = () => {
 
   return (
     <section className="best-products">
-      <h3 className="best-products__title">🔥 베스트 상품 TOP 4</h3>
+      <h3 className="best-products__title">베스트 상품</h3>
       <div className="best-products__grid">
         {bestProducts.map((item) => (
           <div key={item.id} className="product-card">
