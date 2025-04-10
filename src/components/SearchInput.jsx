@@ -2,10 +2,8 @@ import { useState } from "react";
 import "./SearchInput.css";
 
 /**
- * 사용자가 입력한 검색어를 상위 컴포넌트로 전달하는 컴포넌트
+ *  사용자가 입력한 검색어를 상위 컴포넌트로 전달하는 컴포넌트
  *  onChange 이벤트 방식으로 실시간으로 동작
- * @param {onSearch} props - 검색어 전달 함수
- *
  */
 const SearchInput = ({ onSearch }) => {
   const [keyword, setKeyword] = useState("");
@@ -17,7 +15,7 @@ const SearchInput = ({ onSearch }) => {
     onSearch(value.trim()); // 공백 제거 후 상위 컴포넌트로 전달
   };
 
-  return <input type="text" value={keyword} placeholder="🔎  검색할 상품을 입력해주세요." onChange={handleChange} className="search-input" />;
+  return <input type="text" value={keyword} placeholder="🔎  검색할 상품을 입력해주세요." onChange={handleChange} className="search__input" />;
 };
 
 export default SearchInput;
