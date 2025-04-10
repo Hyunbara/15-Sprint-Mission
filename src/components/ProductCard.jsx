@@ -1,6 +1,11 @@
 import "./ProductCard.css";
 import noImage from "../assets/noImage.jpg";
 
+/**
+ *  단일 상품 정보를 카드 형태로 표시하는 컴포넌트 입니다.
+ *  상품 이미지, 상품명, 가격, 좋아요 수를 표시합니다.
+ * 이미지가 없거나 에러가 발생하는 경우, 대체 이미지를 처리할 수 있도록 onError를 사용하였습니다.
+ */
 const ProductCard = ({ item }) => {
   return (
     <div className="product-card">
