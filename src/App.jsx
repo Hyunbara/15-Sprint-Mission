@@ -5,19 +5,24 @@ import userImage from "./assets/userImage.png";
 import logo from "./assets/pandaLogo.png";
 import AddItem from "./pages/AddItem";
 
+/**
+ *
+ *  router를 통해 페이지 전환을 관리하고 있습니다.
+ *  header에는 로고 + 네비게이션 + 사용자 이미지로 구성되어있습니다. (/items: 중고마켓, /board: 자유게시판, /additem: 상품 등록 페이지)
+ */
 function App() {
   return (
     <BrowserRouter>
       <header className="header">
         <div className="header__logo">
-          <div className="header_logo-container">
+          <div>
             <NavLink to="/items">
-              <img src={logo} alt="logo" className="logo" />
+              <img src={logo} alt="logo" className="header__logo-img" />
             </NavLink>
           </div>
 
           <div className="header__nav-container">
-            <nav className="nav">
+            <nav className="header__nav">
               <NavLink to="/board">자유게시판</NavLink>
               <NavLink to="items">중고마켓</NavLink>
             </nav>
@@ -25,7 +30,7 @@ function App() {
         </div>
 
         <div className="header__right">
-          <img src={userImage} alt="user" className="user_img" />
+          <img src={userImage} alt="user" className="header__user-img" />
         </div>
       </header>
       <hr style={{ border: "solid 1px #DFDFDF" }} />

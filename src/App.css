@@ -13,7 +13,7 @@
   margin-left: 200px;
 }
 
-.logo {
+.header__logo-img {
   width: 153px;
   height: 51px;
 }
@@ -22,12 +22,12 @@
   margin-left: 24px;
 }
 
-.nav {
+.header__nav {
   display: flex;
   gap: 16px;
 }
 
-.nav a {
+.header__nav a {
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
@@ -40,7 +40,7 @@
   color: #3692ff;
 }
 
-.header__right .user_img {
+.header__right .header__user-img {
   width: 40px;
   height: 40px;
   margin-right: 40px;
