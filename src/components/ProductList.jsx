@@ -16,6 +16,7 @@ const ProductList = () => {
   const [orderBy, setOrderBy] = useState("recent");
   const [page, setPage] = useState(1);
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
   const nav = useNavigate(); // 페이지 이동을 위한 hook 사용
 
@@ -39,6 +40,7 @@ const ProductList = () => {
   useEffect(() => {
     const updatePageSize = () => {
       const width = window.innerWidth;
+      setIsMobile(width <= 767);
 
       if (width <= 767) {
         setResponsivePageSize(4);
@@ -62,11 +64,6 @@ const ProductList = () => {
   const paginatedProducts = products.slice((page - 1) * responsivePageSize, page * responsivePageSize);
   const totalPage = Math.ceil(products.length / responsivePageSize);
 
-  const handleOrderChange = (e) => {
-    setOrderBy(e.target.value);
-    setPage(1); // 정렬 바꿀 때 첫 페이지로 이동
-  };
-
   // 검색
   const handleSearch = (keyword) => {
     setSearchKeyword(keyword);
@@ -78,13 +75,22 @@ const ProductList = () => {
       <div className="product-list__header">
         <div className="product-list__top">
           <h3>전체 상품</h3>
-          <button onClick={() => nav("/additem")} className="product-list__add-button">
-            <span>상품 등록하기</span>
-          </button>
+          {isMobile && (
+            <button onClick={() => nav("/additem")} className="product-list__add-button">
+              <span>상품 등록하기</span>
+            </button>
+          )}
         </div>
 
         <div className="product-list__actions">
-          <SearchInput onSearch={handleSearch} className="product-list__search-input" />
+          <div className="product-list__search-wrapper">
+            <SearchInput onSearch={handleSearch} className="product-list__search-input" />
+          </div>
+          {!isMobile && (
+            <button onClick={() => nav("/additem")} className="product-list__add-button">
+              <span>상품 등록하기</span>
+            </button>
+          )}
           <Dropdown
             value={orderBy}
             onSelect={(value) => {

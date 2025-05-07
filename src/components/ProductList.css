@@ -21,7 +21,8 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  justify-content: space-between;
+  margin-right: 40px;
+  justify-content: flex-start;
 }
 
 .product-list__grid {
@@ -44,6 +45,11 @@
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.product-list__search-wrapper {
+  flex-grow: 1;
+  max-width: 325px;
 }
 
 .dropdown {
@@ -105,6 +111,16 @@
     align-items: center;
     width: 100%;
     gap: 12px;
+    justify-content: space-between; /* 모바일에서는 space-between으로 유지 */
+  }
+
+  .product-list__search-wrapper {
+    flex-grow: 1;
+    max-width: none; /* 모바일에서는 최대 너비 제한 없음 */
+  }
+
+  .product-list__add-button {
+    margin-left: 0; /* 모바일에서는 마진 제거 */
   }
 
   .dropdown {
