@@ -5,6 +5,8 @@
   padding: 9px 20px 9px 16px;
   background-color: #f3f4f6;
   border: none;
+  flex: none;
+  margin-right: 10px;
 }
 
 .search__input::placeholder {
