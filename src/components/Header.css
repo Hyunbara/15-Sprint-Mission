@@ -33,12 +33,16 @@
   font-weight: 700;
   line-height: 26px;
   text-decoration: none;
-  color: #4b5563;
 }
 
 .active {
   font-weight: bold;
   color: #3692ff;
+}
+
+.market-active {
+  color: #3692ff;
+  font-weight: 700;
 }
 
 .header__right .header__user-img {

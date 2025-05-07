@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import userImage from "../assets/userImage.png";
 import logo from "../assets/pandaLogo.png";
 import "../components/Header.css";
@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+  const location = useLocation();
+  const isMarketPage = location.pathname === "/items" || location.pathname === "/additem";
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,7 +32,9 @@ const Header = () => {
         <div className="header__nav-container">
           <nav className="header__nav">
             <NavLink to="/board">자유게시판</NavLink>
-            <NavLink to="/items">중고마켓</NavLink>
+            <NavLink to="/items" className={isMarketPage ? "market-active" : ""}>
+              중고마켓
+            </NavLink>
           </nav>
         </div>
       </div>
