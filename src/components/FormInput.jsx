@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import "./FormInput.css";
 
-const FormInput = ({ onFormValidChange, onFormDataChange }) => {
+const FormInput = ({ onFormValidChange }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
+  const [tags, setTags] = useState([]);
 
+  // tag input에 입력된 값을 저장
   const handleTagKeyDown = (e) => {
-    if (e.nativeEvent.isComposing) return;
+    if (e.nativeEvent.isComposing) return; // 한글 입력시 마지막 글자 복사 문제 방지
     if (e.key === "Enter" && tagInput.trim()) {
       e.preventDefault();
       if (!tags.includes(tagInput.trim())) {
@@ -19,15 +20,16 @@ const FormInput = ({ onFormValidChange, onFormDataChange }) => {
     }
   };
 
+  // 태그 삭제
   const handleTagRemove = (removeTag) => {
     setTags(tags.filter((tag) => tag !== removeTag));
   };
 
+  // 입력 폼 Input 값이 변경될 때마다 호출 (input에 값들이 다 들어가있는지)
   useEffect(() => {
     const isValid = title.trim() && description.trim() && price.trim() && tags.length > 0;
     onFormValidChange(!!isValid);
-    onFormDataChange?.({ title, description, price, tags });
-  }, [title, description, price, tags, onFormValidChange, onFormDataChange]);
+  }, [title, description, price, tags, onFormValidChange]);
 
   return (
     <div>
