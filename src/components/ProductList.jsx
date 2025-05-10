@@ -55,7 +55,6 @@ const ProductList = () => {
     window.addEventListener("resize", updatePageSize);
 
     return () => {
-      // 메모리 누수가 일어 날 수 있으니 참조 해제
       window.removeEventListener("resize", updatePageSize);
     };
   }, []);

@@ -3,6 +3,7 @@ import "./Dropdown.css";
 import dropdown from "../assets/dropdown.png";
 import mobileFilter from "../assets/mobileFilter.png";
 
+// pc/tablet 과 mobile 버튼을 눌렀을 때, dropdown가 오픈/닫히게 하는 함수
 const Dropdown = ({ value, options, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
 
