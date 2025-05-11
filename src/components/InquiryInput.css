@@ -54,6 +54,10 @@
   align-items: center;
 }
 
+.inquiry-input__submit--active {
+  background-color: #3692ff;
+}
+
 /* tablet */
 @media (max-width: 1199px) {
   .inquiry-input {
