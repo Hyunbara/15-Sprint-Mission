@@ -11,6 +11,7 @@ const CommentList = () => {
   const { productId } = useParams();
   const [comments, setComments] = useState([]);
   const [editCommentId, setEditCommentId] = useState(null);
+  const [openDropdownId, setOpenDropdownId] = useState(null);
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -24,6 +25,25 @@ const CommentList = () => {
 
     fetchComments();
   }, [productId]);
+
+  // 드롭다운 토글 함수
+  const toggleDropdown = (commentId) => {
+    setOpenDropdownId(openDropdownId === commentId ? null : commentId);
+  };
+
+  // 외부 클릭 시 드롭다운 닫기
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (openDropdownId && !event.target.closest(".comment-list__dropdown-toggle")) {
+        setOpenDropdownId(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openDropdownId]);
 
   return (
     <div className="comment-list">
@@ -56,19 +76,21 @@ const CommentList = () => {
               </div>
               <div className="comment-list__actions">
                 {editCommentId !== comment.id && (
-                  <label className="comment-list__dropdown-toggle">
-                    <input type="checkbox" className="comment-list__dropdown-checkbox" hidden />
-                    <img src={ic_kebab} alt="kebab" className="comment-list__kebab" />
-                    <div className="comment-list__dropdown">
-                      <button
-                        onClick={() => {
-                          setEditCommentId(comment.id);
-                        }}
-                      >
-                        수정하기
-                      </button>
-                    </div>
-                  </label>
+                  <div className="comment-list__dropdown-toggle">
+                    <img src={ic_kebab} alt="kebab" className="comment-list__kebab" onClick={() => toggleDropdown(comment.id)} />
+                    {openDropdownId === comment.id && (
+                      <div className="comment-list__dropdown">
+                        <button
+                          onClick={() => {
+                            setEditCommentId(comment.id);
+                            setOpenDropdownId(null);
+                          }}
+                        >
+                          수정하기
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
