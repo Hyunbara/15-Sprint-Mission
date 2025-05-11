@@ -72,11 +72,9 @@
 }
 
 .comment-list__dropdown {
-  display: none;
   width: 139px;
   height: 46px;
   justify-content: center;
-
   flex-direction: column;
   position: absolute;
   top: 24px;
@@ -85,9 +83,6 @@
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   z-index: 10;
-}
-
-.comment-list__dropdown-toggle input[type="checkbox"]:checked ~ .comment-list__dropdown {
   display: flex;
 }
 
