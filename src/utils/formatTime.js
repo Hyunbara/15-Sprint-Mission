@@ -1,3 +1,5 @@
+// 문의 댓글에 대한 시간을 계산해주는 함수
+
 export const formatTime = (createdAt) => {
   const milliSeconds = new Date() - createdAt;
   const seconds = milliSeconds / 1000;
